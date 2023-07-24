@@ -2,7 +2,7 @@
 
 namespace GeometryLibrary
 {
-    //Класс описывающий окружность
+        //Класс описывающий окружность
     public class Circle
     {
         //Радиус окружности
@@ -13,6 +13,7 @@ namespace GeometryLibrary
             this.r = r;
         }
 
+        //Площадь
         public double Area()
         {
             return Math.PI * Math.Pow(r, 2);
@@ -34,12 +35,14 @@ namespace GeometryLibrary
             this.c = c;
         }
 
+        //Площадь
         public double Area()
         {
             double p = (a + b + c) / 2;
             return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
         }
 
+        //Проверка является ли треугольник прямоугольным
         public bool ThisRectangular()
         {
             double Hypotenuse;
@@ -72,8 +75,10 @@ namespace GeometryLibrary
         }
     }
 
+    //Класс производящий действия над фигурами
     public static class Calculation{
 
+        //Выполняет операцию над фигурой, если у ее класса есть метод Area
         public static double CalculateTheArea(Object figure)
         {
             var type = figure.GetType();
@@ -84,6 +89,7 @@ namespace GeometryLibrary
             else return -1;
         }
 
+        //Выполняет операцию над фигурой, если у ее класса есть метод ThisRectangular
         public static bool ThisRectangular(object figure)
         {
             var type = figure.GetType();
@@ -95,5 +101,4 @@ namespace GeometryLibrary
         }
 
     }
-
 }
